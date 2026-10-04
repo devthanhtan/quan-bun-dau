@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#84501a" stroke="#f6c445" stroke-width="4"/>
+  <circle cx="50" cy="50" r="40" fill="#2d6a4f"/>
+  <!-- Lá chuối gân -->
+  <path d="M20 50 Q50 20 80 50 Q50 80 20 50" fill="#40916c" opacity="0.8"/>
+  <!-- Bún lá -->
+  <rect x="24" y="36" width="16" height="16" rx="3" fill="#fdfbf7" stroke="#e6e1d5" stroke-width="1.5"/>
+  <line x1="28" y1="36" x2="28" y2="52" stroke="#d8d2c4" stroke-width="1"/>
+  <line x1="32" y1="36" x2="32" y2="52" stroke="#d8d2c4" stroke-width="1"/>
+  <line x1="36" y1="36" x2="36" y2="52" stroke="#d8d2c4" stroke-width="1"/>
+  <!-- Đậu hũ rán vàng -->
+  <rect x="44" y="32" width="15" height="15" rx="3" fill="#f4a261" stroke="#e76f51" stroke-width="1.5"/>
+  <rect x="47" y="35" width="9" height="9" rx="1.5" fill="#e9c46a"/>
+  <!-- Chả cốm -->
+  <ellipse cx="68" cy="40" rx="9" ry="7" fill="#b7b7a4" stroke="#a5a58d" stroke-width="1.5"/>
+  <circle cx="66" cy="38" r="1.5" fill="#588157"/>
+  <circle cx="70" cy="41" r="1.5" fill="#588157"/>
+  <!-- Chén mắm tôm -->
+  <circle cx="50" cy="65" r="14" fill="#3a1d28" stroke="#f9bec7" stroke-width="2"/>
+  <circle cx="50" cy="65" r="11" fill="#582f3f"/>
+  <circle cx="48" cy="64" r="5" fill="#dfc2d0" opacity="0.8"/>
+  <!-- Ớt và quất -->
+  <polygon points="52,62 55,67 50,66" fill="#e63946"/>
+  <circle cx="46" cy="67" r="2.5" fill="#8cb369"/>
+</svg>

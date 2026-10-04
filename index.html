@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#3a1c0d">
+  <title>🥢 Quán Bún Đậu Mơ Ước - Tiệm Bún Đậu Phố Cổ</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Google Fonts: Baloo 2 & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/kitchen.css">
+  <link rel="stylesheet" href="/src/css/sidebars.css">
+  <link rel="stylesheet" href="/src/css/animations.css">
+</head>
+<body>
+  <div class="game-wrapper" id="gameWrapper">
+    
+    <!-- ==========================================
+         📱 DESKTOP SIDEBAR TRÁI: BẢNG TIN BÚN ĐẬU FEED
+         ========================================== -->
+    <aside class="desktop-sidebar desktop-sidebar-left" id="desktopSidebarLeft" aria-label="Mạng xã hội Bún Đậu Feed">
+      <div class="sidebar-header">
+        <div class="sidebar-title">
+          <span class="sidebar-icon">📱</span>
+          <b>Bún Đậu Feed</b>
+        </div>
+        <div class="sidebar-actions">
+          <button type="button" class="sidebar-tool-btn" id="btnRefreshFeed" title="Làm mới bảng tin">🔄</button>
+        </div>
+      </div>
+      <div class="sidebar-feed-sub">Mạng xã hội ẩm thực phố cổ · 24/7</div>
+      <div class="sidebar-content" id="socialFeedList">
+        <!-- Feed items injected dynamically -->
+      </div>
+    </aside>
+
+    <!-- ==========================================
+         🎮 KHUNG GAME CHÍNH (MOBILE-FIRST FRAME)
+         ========================================== -->
+    <div class="app-scaler" id="appScaler">
+      <div class="app" id="mainApp">
+        
+        <!-- Header HUD -->
+        <header class="app-header" id="appHeader">
+          <div class="h-col h-left">
+            <div class="h-btn-group">
+              <button id="btnSoundToggle" class="hud-btn" title="Bật/Tắt âm thanh" aria-label="Âm thanh">
+                <span id="soundIcon">🔊</span>
+              </button>
+              <button id="btnOpenTutorial" class="hud-btn btn-highlight-tutorial" title="Hướng dẫn cách chơi" aria-label="Hướng dẫn">
+                <span>❓</span>
+              </button>
+              <button id="btnSettings" class="hud-btn" title="Cài đặt quán" aria-label="Cài đặt">
+                <span>⚙️</span>
+              </button>
+              <button id="btnRecipeBook" class="hud-btn" title="Sổ tay công thức mẹt" aria-label="Công thức">
+                <span>📖</span>
+              </button>
+            </div>
+            <div class="h-day-badge">
+              <span class="day-label">Ngày</span>
+              <strong class="day-num" id="hudDay">1</strong>
+              <small class="day-phase" id="hudPhase">Chuẩn bị</small>
+            </div>
+          </div>
+
+          <div class="h-col h-center">
+            <div class="shop-name-tag" id="hudShopName">Quán Bún Đậu Mơ Ước</div>
+            <div class="shop-money-wrap">
+              <span class="money-currency">₫</span>
+              <span class="money-val" id="hudMoney">200.000</span>
+            </div>
+          </div>
+
+          <div class="h-col h-right">
+            <button id="btnPetDog" class="hud-btn pet-btn" title="Vuốt ve chú chó Vện giữ xe (+Kiên nhẫn)" aria-label="Chú chó Vện">
+              <span class="dog-ico">🐕</span>
+              <span class="dog-badge" id="dogBuffStatus">Sẵn sàng</span>
+            </button>
+            <div class="shop-stars-wrap" id="hudStarsWrap" title="Đánh giá quán">
+              <div class="star-icons" id="hudStarIcons">★★★★★</div>
+              <span class="star-rating-val" id="hudRatingVal">5.0</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Awning Mái Che Phố Cổ -->
+        <div class="awning-canopy">
+          <div class="awning-stripes"></div>
+          <div class="awning-lantern left">🏮</div>
+          <div class="awning-lantern right">🏮</div>
+        </div>
+
+        <!-- Khung Nội Dung Chính Của Game -->
+        <main class="game-viewport" id="gameView">
+          <!-- Views (Prep, Rush, Summary) injected dynamically -->
+        </main>
+
+        <!-- Thanh Trạng Thái / Tin Nhắn Nhanh Phía Dưới -->
+        <footer class="app-footer" id="appFooter">
+          <div class="footer-status-text" id="footerStatusText">
+            🎋 Chào mừng bạn đến với Quán Bún Đậu Mơ Ước! Hãy nhập nguyên liệu để mở ca bán.
+          </div>
+        </footer>
+
+      </div> <!-- /app -->
+    </div> <!-- /appScaler -->
+
+    <!-- ==========================================
+         ⭐ DESKTOP SIDEBAR PHẢI: ĐÁNH GIÁ CỦA KHÁCH
+         ========================================== -->
+    <aside class="desktop-sidebar desktop-sidebar-right" id="desktopSidebarRight" aria-label="Đánh giá của thực khách">
+      <div class="sidebar-header">
+        <div class="sidebar-title">
+          <span class="sidebar-icon">⭐</span>
+          <b>Đánh Giá Thực Khách</b>
+        </div>
+        <div class="sidebar-actions">
+          <span class="review-count-badge" id="sidebarReviewCount">0 đánh giá</span>
+        </div>
+      </div>
+      <div class="sidebar-feed-sub">Hộp thư góp ý & Review món ăn</div>
+      <div class="sidebar-content" id="reviewsList">
+        <!-- Review items injected dynamically -->
+      </div>
+    </aside>
+
+  </div> <!-- /game-wrapper -->
+
+  <!-- Toast Thông Báo -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Modal Cài Đặt (Settings & Save System) -->
+  <div class="game-modal" id="modalSettings" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>⚙️ Cài Đặt & Quản Lý Quán</h3>
+        <button class="btn-close-modal" id="btnCloseSettings">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="setting-item">
+          <label for="inputShopName">Tên Quán Bún Đậu:</label>
+          <div class="input-inline">
+            <input type="text" id="inputShopName" maxlength="30" placeholder="VD: Bún Đậu Cô Hạnh Phố Cổ">
+            <button class="btn-primary-small" id="btnSaveShopName">Đổi tên</button>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <label>Âm thanh & Nhạc nền ASMR:</label>
+          <div class="audio-controls-row">
+            <button class="btn-chip active" id="btnToggleSoundFX">🔊 Hiệu ứng ASMR: Bật</button>
+            <button class="btn-chip active" id="btnToggleBGM">🎵 Nhạc Lofi: Bật</button>
+          </div>
+        </div>
+
+        <div class="setting-divider"></div>
+
+        <div class="setting-item">
+          <label>Sao Lưu & Khôi Phục Dữ Liệu:</label>
+          <div class="save-actions-grid">
+            <button class="btn-secondary" id="btnExportSave">📤 Xuất Mã Save</button>
+            <button class="btn-secondary" id="btnImportSave">📥 Nhập Mã Save</button>
+          </div>
+          <textarea id="saveCodeArea" rows="3" placeholder="Mã sao lưu tiến trình game..." readonly></textarea>
+        </div>
+
+        <div class="setting-divider"></div>
+
+        <div class="setting-danger-zone">
+          <button class="btn-danger" id="btnResetGame">🗑️ Xóa Dữ Liệu & Chơi Lại Từ Đầu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Hướng Dẫn Tân Thủ (Interactive Tutorial) -->
+  <div class="game-modal" id="modalTutorial" hidden>
+    <div class="modal-card modal-tutorial-card">
+      <div class="modal-header tutorial-header">
+        <h3>🏮 Hướng Dẫn Quán Bún Đậu Mơ Ước</h3>
+        <button class="btn-close-modal" id="btnCloseTutorial">✕</button>
+      </div>
+      <div class="modal-body" id="tutorialContentBody">
+        <!-- Rendered by TutorialGuide.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Sổ Tay Công Thức (Recipe Book) -->
+  <div class="game-modal" id="modalRecipe" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>📖 Bí Quyết Mẹt Bún Đậu Phố Cổ</h3>
+        <button class="btn-close-modal" id="btnCloseRecipe">✕</button>
+      </div>
+      <div class="modal-body" id="recipeBookContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
